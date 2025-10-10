@@ -83,11 +83,11 @@ public class Movement : MonoBehaviour
         //      ********    //
 
         //  ***** wall climb ****   //
-        if (Physics.Raycast(transform.position, transform.forward,0.7f) && Input.GetAxisRaw("Vertical") >=0.5f)
+  /*      if (Physics.Raycast(transform.position, transform.forward,0.7f) && Input.GetAxisRaw("Vertical") >=0.5f)
         {
            
             currentForceVelocity.y = 12f;
-        }
+        }*/
         //      ********    //
         cc.Move(currentMoveVelocity * Time.deltaTime);
         cc.Move(currentForceVelocity*Time.deltaTime);
