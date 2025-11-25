@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StorageItem : MonoBehaviour
+public class StorageItem : MonoBehaviour, IInteractable
 {
 
     
@@ -18,7 +18,7 @@ public class StorageItem : MonoBehaviour
         
     }
 
-    public void interact()
+    public void Interact()
     {
         Debug.Log("storage interacted with");
     }
