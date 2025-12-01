@@ -11,9 +11,6 @@ public class Interaction : MonoBehaviour
     public GameObject cam;
     public float pickupRange = 0.5f;
     // Start is called before the first frame update
-
-
-
     void Start()
     {
 
@@ -30,7 +27,9 @@ public class Interaction : MonoBehaviour
                 if (hit.collider.gameObject.TryGetComponent(out IInteractable interacted))
                 {
                     interacted.Interact();
+
                 }
+                
             }
         }
 

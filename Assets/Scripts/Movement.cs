@@ -18,6 +18,7 @@ public class Movement : MonoBehaviour
     Vector3 moveDampVelocity;
     public float MoveSmoothTime;
     Vector3 decayingForce = Vector3.zero;
+    public float lookSensitivity;
 
     Vector3 impulseForceVelocity;
     // Start is called before the first frame update
@@ -38,10 +39,10 @@ public class Movement : MonoBehaviour
     void camControls()
     {
         rotationX = Input.GetAxis("Mouse X");
-        rotationY -= Input.GetAxis("Mouse Y");
+        rotationY -= Input.GetAxis("Mouse Y") * lookSensitivity;
         rotationY = Mathf.Clamp(rotationY, -90, 90);
-        gameObject.transform.Rotate(0, rotationX, 0);
-        camObject.transform.rotation = Quaternion.Euler(rotationY, gameObject.transform.rotation.eulerAngles.y, 0);
+        gameObject.transform.Rotate(0, rotationX * lookSensitivity, 0);
+        camObject.transform.rotation = Quaternion.Euler(rotationY , gameObject.transform.rotation.eulerAngles.y, 0);
         
     }
 
